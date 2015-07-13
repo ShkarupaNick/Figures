@@ -1,20 +1,13 @@
 package ua.homework1.www;
 
-import java.io.BufferedReader;
+import ua.homework1.www.IFigure.Colors;
 
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-
-import ua.homework1.www.IFigure.Colors;
 
 public class Main {
 
@@ -108,7 +101,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		loadInputData("InputData.txt");
-		exportData("output.txt");
+		exportData("OutputData.txt");
 	}
 
 }

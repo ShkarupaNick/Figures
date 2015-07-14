@@ -43,7 +43,7 @@ public abstract class AbstractFigure implements IFigure{
 	public String toString() {
 		return "color=" + color 
 				+ ", perimeter=" + (perimeter == 0.0 ? "N/A" : perimeter) 
-				+ ", square: "	+ (square == 0.0 ? "N/A" : square);
+				+ ", square= "	+ (square == 0.0 ? "N/A" : square);
 	}	
 	
 	protected abstract  void update();

@@ -1,60 +1,61 @@
 package ua.homework1.www;
 
-public abstract class AbstractFigure implements IFigure{	
+import java.io.Serializable;
 
-	protected Figures name;
-	protected double square;
-	protected double perimeter;
-	protected Colors color;
+public abstract class AbstractFigure implements IFigure, Serializable, Cloneable{
 
-		public Colors getColor() {
-		return color;
-	}
+    protected Figures name;
+    protected double square;
+    protected double perimeter;
+    protected Colors color;
 
-	public double getSquare() {
-			return square;
-		}
+    public Colors getColor() {
+        return color;
+    }
 
-		public void setSquare(double square) {
-			this.square = square;
-		}
+    public double getSquare() {
+        return square;
+    }
 
-		public double getPerimeter() {
-			return perimeter;
-		}
+    public void setSquare(double square) {
+        this.square = square;
+    }
 
-		public void setPerimeter(double perimeter) {
-			this.perimeter = perimeter;
-		}
+    public double getPerimeter() {
+        return perimeter;
+    }
 
-	public void setColor(Colors color) {
-		this.color = color;
-	}
-	
-	public Figures getName() {
-		return name;
-	}
+    public void setPerimeter(double perimeter) {
+        this.perimeter = perimeter;
+    }
 
-	public void setName(Figures name) {
-		this.name = name;
-	}
-	
-	@Override
-	public String toString() {
-		return "color=" + color 
-				+ ", perimeter=" + (perimeter == 0.0 ? "N/A" : perimeter) 
-				+ ", square= "	+ (square == 0.0 ? "N/A" : square);
-	}
+    public void setColor(Colors color) {
+        this.color = color;
+    }
 
+    public Figures getName() {
+        return name;
+    }
 
-	@Override
-	public AbstractFigure clone() throws CloneNotSupportedException {
-		AbstractFigure c = (AbstractFigure) AbstractFigure.super.clone();
-		return c;
+    public void setName(Figures name) {
+        this.name = name;
+    }
 
-	}
-	
-	protected abstract  void update();
+    @Override
+    public String toString() {
+        return    "color=" + color
+                + ", perimeter=" + (perimeter == 0.0 ? "N/A" : perimeter)
+                + ", square= " + (square == 0.0 ? "N/A" : square);
+    }
 
 
+    @Override
+    public AbstractFigure clone() throws CloneNotSupportedException {
+        AbstractFigure c = (AbstractFigure) AbstractFigure.super.clone();
+        c.color = ((AbstractFigure) AbstractFigure.super.clone()).color;
+        return c;
+    }
+
+
+    protected abstract void update();
 }

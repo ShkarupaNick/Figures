@@ -1,7 +1,7 @@
 package ua.homework1.www;
 
 
-public class Square extends AbstractFigure implements  Cloneable{
+public class Square extends AbstractFigure{
 
 	private double a;
 

@@ -8,7 +8,7 @@ public interface IFigure {
 	}
 
 	public enum Colors {
-		WHITE, BLUE, BLACK, GREY, RED, GREEN, PURPLE, LIGHTBLUE, ORANGE;
+		TRANSPARENT, WHITE, BLUE, BLACK, GREY, RED, GREEN, PURPLE, LIGHTBLUE, ORANGE;
 	}
 	
 	public double getSquare();

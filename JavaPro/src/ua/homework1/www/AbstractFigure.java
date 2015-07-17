@@ -9,6 +9,14 @@ public abstract class AbstractFigure implements IFigure, Serializable, Cloneable
     protected double perimeter;
     protected Colors color;
 
+    public AbstractFigure(){
+    }
+
+    public AbstractFigure(Figures name, Colors color){
+            this.name = name;
+            this.color = color;
+    }
+
     public Colors getColor() {
         return color;
     }
@@ -51,10 +59,8 @@ public abstract class AbstractFigure implements IFigure, Serializable, Cloneable
     @Override
     public AbstractFigure clone() throws CloneNotSupportedException {
         AbstractFigure c = (AbstractFigure) AbstractFigure.super.clone();
-        c.color = ((AbstractFigure) AbstractFigure.super.clone()).color;
+       // c.color = ((AbstractFigure) AbstractFigure.super.clone()).color;
         return c;
     }
-
-
     protected abstract void update();
 }

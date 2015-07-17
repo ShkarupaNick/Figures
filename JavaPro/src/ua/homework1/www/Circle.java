@@ -6,18 +6,18 @@ public class Circle extends AbstractFigure {
     private double diameter;
 
     public Circle() {
-        this.name = Figures.CIRCLE;
-    }
+        super(Figures.CIRCLE,Colors.TRANSPARENT);
+        }
 
     public Circle(double radius, Colors color) {
-        this.name = Figures.CIRCLE;
+        this.name =Figures.CIRCLE;
         this.radius = radius;
         this.color = color;
         update();
     }
 
     public Circle(double radius) {
-        this(radius, null);
+        this(radius, Colors.TRANSPARENT);
     }
 
     public double getRadius() {

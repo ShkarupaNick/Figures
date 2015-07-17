@@ -7,7 +7,7 @@ public class Triangle extends AbstractFigure {
 	private double c;
 
 	public Triangle() {
-		this.name = Figures.TRIANGLE;
+		super(Figures.TRIANGLE,Colors.TRANSPARENT);
 	}
 
 	public Triangle(double a, double b, double c, Colors color) {
@@ -20,7 +20,7 @@ public class Triangle extends AbstractFigure {
 	}
 
 	public Triangle(double a, double b, double c) {
-		this(a, b, c, null);
+		this(a, b, c, Colors.TRANSPARENT);
 	}
 
 	public double getA() {

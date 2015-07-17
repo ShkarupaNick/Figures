@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+
 public class Main {
 
     private static List<AbstractFigure> list = new ArrayList<>();
@@ -100,10 +101,8 @@ public class Main {
                     System.err.printf(
                             "The number %.2f doesn`t fit any rules!!!\n", num);
                 }
-
             }
         }
-
         return list;
     }
 
@@ -113,11 +112,18 @@ public class Main {
         exportData("OutputData.txt", false);
 
         Circle c = new Circle(5);
-        System.out.println(c);
+        System.out.println(c.getName() + ": " + c);
 
         Circle clone = c.clone();
         clone.setRadius(10);
         clone.setColor(Colors.BLACK);
-        System.out.println(clone);
+        System.out.println(clone.getName() + ": " + clone);
+
+
+        Square square = new Square(4);
+        System.out.println(square.getName()+": " +square);
+
+        Triangle triangle = new Triangle(2,3,5);
+        System.out.println(triangle.getName()+": " +triangle);
     }
 }

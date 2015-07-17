@@ -40,7 +40,7 @@ public class Main
 
         try {
             ObjectOutputStream prstream = new ObjectOutputStream(new FileOutputStream(f));
-            prstream.writeObject(prstream);
+            prstream.writeObject(student);
             prstream.close();
 
         } catch (IOException e) {

@@ -26,6 +26,7 @@ public class Circle extends AbstractFigure {
 
     public void setRadius(double radius) {
         this.radius = radius;
+        update();
     }
 
     public double getDiameter() {
@@ -34,6 +35,7 @@ public class Circle extends AbstractFigure {
 
     public void setDiameter(double diameter) {
         this.diameter = diameter;
+        update();
     }
 
 

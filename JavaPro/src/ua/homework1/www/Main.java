@@ -3,7 +3,6 @@ package ua.homework1.www;
 import ua.homework1.www.IFigure.Colors;
 
 import java.io.*;
-import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,6 +12,7 @@ import java.util.List;
 public class Main {
 
     private static List<AbstractFigure> list = new ArrayList<>();
+
     public static String[] loadInputData(String path) throws IOException {
 
 
@@ -35,7 +35,7 @@ public class Main {
         return str;
     }
 
-    public static void exportData(String path) throws FileNotFoundException {
+    public static void exportData(String path, boolean isSerialize) throws IOException {
 
         try {
             PrintWriter out = new PrintWriter(new BufferedWriter(
@@ -48,22 +48,29 @@ public class Main {
                 outStr.append(String.format("%s%s={%s}%s\n", f.getName(), i++,
                         f, i < list.size() ? "," : "}"));
             }
-            out.println("\n\n"
-                    + new SimpleDateFormat("yyyy-mm-dd hh:mm:ss")
-                    .format(new Date())
-                    + "\n-----------------------------------------------------------------------------------------------\n");
-            out.println(outStr);
-            out.close();
+            if (!isSerialize) {
+                out.println("\n\n"
+                        + new SimpleDateFormat("yyyy-mm-dd hh:mm:ss")
+                        .format(new Date())
+                        + "\n-----------------------------------------------------------------------------------------------\n");
+                out.println(outStr);
+                out.close();
+            } else {
+                File f = new File(path);
+                ObjectOutputStream prstream = new ObjectOutputStream(new FileOutputStream(f));
+                prstream.writeObject(list);
+                prstream.close();
+            }
+
 
         } catch (IOException e) {
             System.err.println("Caught IOException: " + e.getMessage());
         }
-
     }
+
 
     public static List<AbstractFigure> createFigures(String[] str) {
         for (int i = 0; i < str.length; i++) {
-
             // if value is double
             if (str[i].matches("\\d+(\\.\\d+)?")) {
                 double num = Double.valueOf(str[i]);
@@ -100,23 +107,17 @@ public class Main {
         return list;
     }
 
-    public static void main(String[] args) throws IOException {
-//       Runtime runtime = Runtime.getRuntime();
-//        NumberFormat format = NumberFormat.getInstance();
-//        StringBuilder sb = new StringBuilder();
-//        long maxMemory = runtime.maxMemory();
-//        long allocatedMemory = runtime.totalMemory();
-//        long freeMemory = runtime.freeMemory();
-//        long used  = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+    public static void main(String[] args) throws IOException, CloneNotSupportedException {
 //
-//        sb.append("free memory: " + format.format(freeMemory / 1024) + "\n");
-//        sb.append("allocated memory: " + format.format(allocatedMemory / 1024) + "\n");
-//        sb.append("max memory: " + format.format(maxMemory / 1024) + "\n");
-//        sb.append("total free memory: " + format.format((freeMemory + (maxMemory - allocatedMemory)) / 1024) + "\n");
-//        sb.append("used memory: " + format.format(used / 1024) + "\n");
-//        System.out.println(sb);
-
         loadInputData("InputData.txt");
-        exportData("OutputData.txt");
+        exportData("OutputData.txt", false);
+
+        Circle c = new Circle(5);
+        System.out.println(c);
+
+        Circle clone = c.clone();
+        clone.setRadius(10);
+        clone.setColor(Colors.BLACK);
+        System.out.println(clone);
     }
 }

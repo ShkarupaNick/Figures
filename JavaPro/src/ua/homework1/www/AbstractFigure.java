@@ -48,7 +48,6 @@ public abstract class AbstractFigure implements IFigure, Serializable, Cloneable
                 + ", square= " + (square == 0.0 ? "N/A" : square);
     }
 
-
     @Override
     public AbstractFigure clone() throws CloneNotSupportedException {
         AbstractFigure c = (AbstractFigure) AbstractFigure.super.clone();

@@ -15,5 +15,5 @@ public interface IFigure {
 	public double getPerimeter();
 	public void setColor(Colors color);
 	public Colors getColor();
-	
+
 }

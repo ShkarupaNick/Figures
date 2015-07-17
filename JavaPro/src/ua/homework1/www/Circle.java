@@ -46,8 +46,8 @@ public class Circle extends AbstractFigure {
                 + ", diameter=" + diameter;
     }
 
-    @Override
-    protected void update() {
+
+    public void update() {
         if (radius == 0.0) {
             System.err.println("Radius  is not specified!!!");
         } else {

@@ -27,7 +27,7 @@ public class Square extends AbstractFigure{
 	}
 
 	@Override
-	protected void update() {
+	public void update() {
 		if (a == 0.0) {
 			System.err.println("Side length  is not specified!!!");
 		} else {

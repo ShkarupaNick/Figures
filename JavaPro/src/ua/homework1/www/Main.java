@@ -3,6 +3,7 @@ package ua.homework1.www;
 import ua.homework1.www.IFigure.Colors;
 
 import java.io.*;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,7 +13,6 @@ import java.util.List;
 public class Main {
 
     private static List<AbstractFigure> list = new ArrayList<>();
-
     public static String[] loadInputData(String path) throws IOException {
 
 
@@ -26,6 +26,7 @@ public class Main {
             builder.append(System.lineSeparator());
             line = br.readLine();
         }
+
         String text = builder.toString();
         String str[] = text.replaceAll("\n|\r\n", "").split(";");
         System.out.println(Arrays.toString(str));
@@ -81,7 +82,7 @@ public class Main {
                 } else if (num % 2 == 0) {
 
                     Triangle tr = new Triangle();
-                    tr.setC(num / 2);
+                    tr.setC(num / 2.0);
                     tr.setColor(Colors.BLACK);
                     list.add(tr);
 
@@ -100,8 +101,22 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
+//       Runtime runtime = Runtime.getRuntime();
+//        NumberFormat format = NumberFormat.getInstance();
+//        StringBuilder sb = new StringBuilder();
+//        long maxMemory = runtime.maxMemory();
+//        long allocatedMemory = runtime.totalMemory();
+//        long freeMemory = runtime.freeMemory();
+//        long used  = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+//
+//        sb.append("free memory: " + format.format(freeMemory / 1024) + "\n");
+//        sb.append("allocated memory: " + format.format(allocatedMemory / 1024) + "\n");
+//        sb.append("max memory: " + format.format(maxMemory / 1024) + "\n");
+//        sb.append("total free memory: " + format.format((freeMemory + (maxMemory - allocatedMemory)) / 1024) + "\n");
+//        sb.append("used memory: " + format.format(used / 1024) + "\n");
+//        System.out.println(sb);
+
         loadInputData("InputData.txt");
         exportData("OutputData.txt");
     }
-
 }

@@ -1,7 +1,7 @@
 package ua.homework1.www;
 
 
-public class Square extends AbstractFigure{
+public class Square extends AbstractFigure implements  Cloneable{
 
 	private double a;
 
@@ -35,6 +35,11 @@ public class Square extends AbstractFigure{
 			square = a * a;
 			perimeter = 4*a;
 		}		
+	}
+
+	@Override
+	public Square clone() throws CloneNotSupportedException {
+		return  (Square)Square.super.clone();
 	}
 
 }

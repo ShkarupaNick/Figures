@@ -44,8 +44,17 @@ public abstract class AbstractFigure implements IFigure{
 		return "color=" + color 
 				+ ", perimeter=" + (perimeter == 0.0 ? "N/A" : perimeter) 
 				+ ", square= "	+ (square == 0.0 ? "N/A" : square);
-	}	
+	}
+
+
+	@Override
+	public AbstractFigure clone() throws CloneNotSupportedException {
+		AbstractFigure c = (AbstractFigure) AbstractFigure.super.clone();
+		return c;
+
+	}
 	
 	protected abstract  void update();
- 
+
+
 }

@@ -1,129 +1,24 @@
 package ua.homework1.www;
 
-import ua.homework1.www.IFigure.Colors;
-
-import java.io.*;
-import java.text.SimpleDateFormat;
+import ua.homework1.www.InputDataLoader.InputConfig;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
-
 public class Main {
-
-    private static List<AbstractFigure> list = new ArrayList<>();
-
-    public static String[] loadInputData(String path) throws IOException {
-
-
-        BufferedReader br = new BufferedReader(new FileReader(path));
-
-        StringBuilder builder = new StringBuilder();
-        String line = br.readLine();
-
-        while (line != null && !line.equals("")) {
-            builder.append(line);
-            builder.append(System.lineSeparator());
-            line = br.readLine();
-        }
-
-        String text = builder.toString();
-        String str[] = text.replaceAll("\n|\r\n", "").split(";");
-        System.out.println(Arrays.toString(str));
-        createFigures(str);
-        br.close();
-        return str;
-    }
-
-    public static void exportData(String path, boolean isSerialize) throws IOException {
-
-        try {
-            PrintWriter out = new PrintWriter(new BufferedWriter(
-                    new FileWriter(path, true)));
-
-
-            int i = 1;
-            StringBuilder outStr = new StringBuilder("{");
-            for (AbstractFigure f : list) {
-                outStr.append(String.format("%s%s={%s}%s\n", f.getName(), i++,
-                        f, i < list.size() ? "," : "}"));
-            }
-            if (!isSerialize) {
-                out.println("\n\n"
-                        + new SimpleDateFormat("yyyy-mm-dd hh:mm:ss")
-                        .format(new Date())
-                        + "\n-----------------------------------------------------------------------------------------------\n");
-                out.println(outStr);
-                out.close();
-            } else {
-                File f = new File(path);
-                ObjectOutputStream prstream = new ObjectOutputStream(new FileOutputStream(f));
-                prstream.writeObject(list);
-                prstream.close();
-            }
-
-
-        } catch (IOException e) {
-            System.err.println("Caught IOException: " + e.getMessage());
-        }
-    }
-
-
-    public static List<AbstractFigure> createFigures(String[] str) {
-        for (int i = 0; i < str.length; i++) {
-            // if value is double
-            if (str[i].matches("\\d+(\\.\\d+)?")) {
-                double num = Double.valueOf(str[i]);
-                // System.out.println(num);
-
-                if (num % 2 == 0 && num % 3 == 0) {
-                    double nextnum = i < str.length - 1 ? Double
-                            .valueOf(str[i + 1]) : 0;
-
-                    double prevnum = i > 0 ? Double.valueOf(str[i - 1]) : 0;
-                    double radius = (nextnum + prevnum) / 2.0;
-
-                    Circle c = new Circle(radius, Colors.RED);
-                    list.add(c);
-
-                } else if (num % 2 == 0) {
-
-                    Triangle tr = new Triangle();
-                    tr.setC(num / 2.0);
-                    tr.setColor(Colors.BLACK);
-                    list.add(tr);
-
-                } else if (num % 3 == 0) {
-                    Square sq = new Square(num / 2.5, Colors.WHITE);
-                    list.add(sq);
-                } else {
-                    System.err.printf(
-                            "The number %.2f doesn`t fit any rules!!!\n", num);
-                }
-            }
-        }
-        return list;
-    }
+    private static List<AbstractFigure> list = new ArrayList<AbstractFigure>();
 
     public static void main(String[] args) throws IOException, CloneNotSupportedException {
-//
-        loadInputData("InputData.txt");
-        exportData("OutputData.txt", false);
 
-        Circle c = new Circle(5);
-        System.out.println(c.getName() + ": " + c);
+        InputDataLoader input = new InputDataLoader("InputData.txt");
+        List<InputConfig> inputConfigs =  input.getConfigList();
 
-        Circle clone = c.clone();
-        clone.setRadius(10);
-        clone.setColor(Colors.BLACK);
-        System.out.println(clone.getName() + ": " + clone);
+        FiguresFabric fabric = new FiguresFabric();
+        for(InputConfig conf: inputConfigs){
+           list.add(fabric.getInstance(conf));
+        }
 
-
-        Square square = new Square(4);
-        System.out.println(square.getName()+": " +square);
-
-        Triangle triangle = new Triangle(2,3,5);
-        System.out.println(triangle.getName()+": " +triangle);
+        OutputDataLoader out = new OutputDataLoader();
+        out.exportData(list, "OutputData.txt", false);
     }
 }

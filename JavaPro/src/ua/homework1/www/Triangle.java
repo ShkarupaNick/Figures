@@ -7,11 +7,15 @@ public class Triangle extends AbstractFigure {
 	private double c;
 
 	public Triangle() {
-		super(Figures.TRIANGLE,Colors.TRANSPARENT);
+		super(EFigures.TRIANGLE,EColors.TRANSPARENT);
 	}
 
-	public Triangle(double a, double b, double c, Colors color) {
-		this.name = Figures.TRIANGLE;
+	public Triangle(EColors c) {
+		super(EFigures.TRIANGLE, c);
+	}
+
+	public Triangle(double a, double b, double c, EColors color) {
+		this.name = EFigures.TRIANGLE;
 		this.a = a;
 		this.b = b;
 		this.c = c;
@@ -20,7 +24,7 @@ public class Triangle extends AbstractFigure {
 	}
 
 	public Triangle(double a, double b, double c) {
-		this(a, b, c, Colors.TRANSPARENT);
+		this(a, b, c, EColors.TRANSPARENT);
 	}
 
 	public double getA() {
@@ -59,7 +63,6 @@ public class Triangle extends AbstractFigure {
 			}
 				perimeter = a + b + c;
 				square = Math.pow((perimeter * (perimeter - a) * (perimeter - b) * (perimeter - c)),0.5);
-
 		}		
 	}
 

@@ -6,19 +6,24 @@ public class Square extends AbstractFigure{
 	private double a;
 
 	public Square() {
-		super(Figures.SQUARE, Colors.TRANSPARENT);
+		super(EFigures.SQUARE, EColors.TRANSPARENT);
 	}
 
-	public Square(double a, Colors color) {
+	public Square(EColors c) {
+		super(EFigures.SQUARE, c);
+	}
+
+	public Square(double a, EColors color) {
 		this();
 		this.a = a;
 		this.color = color;
 		update();
 
 	}
-	
+
+
 	public Square(double a) {
-		this(a, Colors.TRANSPARENT);
+		this(a, EColors.TRANSPARENT);
 	}
 
 	@Override

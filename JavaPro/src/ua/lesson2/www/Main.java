@@ -34,23 +34,11 @@ public class Main
         System.out.println("after cloning\n" + user.getName() + "-" + user.getAge() + "- ages"+ user.getBirthday()+"- birthday");
         */
 
-        Student student = new Student("PBF","Che",13,"qwert");
-        File f = new File("demo.txt");
-
-
-        try {
-            ObjectOutputStream prstream = new ObjectOutputStream(new FileOutputStream(f));
-            prstream.writeObject(student);
-            prstream.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
         //+клонирование
         //+сериализация
 
+
+        Double.valueOf(null);
     }
 }
 

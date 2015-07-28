@@ -4,20 +4,20 @@ import java.io.Serializable;
 
 public abstract class AbstractFigure implements IFigure, Serializable, Cloneable{
 
-    protected Figures name;
+    protected EFigures name;
     protected double square;
     protected double perimeter;
-    protected Colors color;
+    protected EColors color;
 
     public AbstractFigure(){
     }
 
-    public AbstractFigure(Figures name, Colors color){
+    public AbstractFigure(EFigures name, EColors color){
             this.name = name;
             this.color = color;
     }
 
-    public Colors getColor() {
+    public EColors getColor() {
         return color;
     }
 
@@ -37,15 +37,15 @@ public abstract class AbstractFigure implements IFigure, Serializable, Cloneable
         this.perimeter = perimeter;
     }
 
-    public void setColor(Colors color) {
+    public void setColor(EColors color) {
         this.color = color;
     }
 
-    public Figures getName() {
+    public EFigures getName() {
         return name;
     }
 
-    public void setName(Figures name) {
+    public void setName(EFigures name) {
         this.name = name;
     }
 
@@ -55,7 +55,6 @@ public abstract class AbstractFigure implements IFigure, Serializable, Cloneable
                 + ", perimeter=" + (perimeter == 0.0 ? "N/A" : perimeter)
                 + ", square= " + (square == 0.0 ? "N/A" : square);
     }
-
     @Override
     public AbstractFigure clone() throws CloneNotSupportedException {
         AbstractFigure c = (AbstractFigure) AbstractFigure.super.clone();

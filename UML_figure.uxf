@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>80</y>
+      <w>330</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>/ua.homework1.www::AbstractFigure/
+--
+#name: Figures
+#square: double
+#perimeter: double
+#color: Colors
+--
++AbstractFigure(): ctor
++AbstractFigure(Figures name, Colors color): ctor
++getColor(): Colors
++getSquare(): double
++setSquare(double square): void
++getPerimeter(): double
++setPerimeter(double perimeter): void
++setColor(Colors color): void
++getName(): Figures
++setName(Figures name): void
++toString(): String
++clone(): AbstractFigure
+#update(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>510</y>
+      <w>380</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>ua.homework1.www::Triangle
+--
+-a: double
+-b: double
+-c: double
+--
++Triangle(): ctor
++Triangle(double a, double b, double c, Colors color): ctor
++Triangle(double a, double b, double c): ctor
++getA(): double
++setA(double a): void
++getB(): double
++setB(double b): void
++getC(): double
++setC(double c): void
++update(): void
++toString(): String
++clone(): Triangle
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1180</x>
+      <y>450</y>
+      <w>270</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>ua.homework1.www::Circle
+--
+-radius: double
+-diameter: double
+--
++Circle(): ctor
++Circle(double radius, Colors color): ctor
++Circle(double radius): ctor
++getRadius(): double
++setRadius(double radius): void
++getDiameter(): double
++setDiameter(double diameter): void
++toString(): String
++update(): void
++clone(): Circle
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>450</y>
+      <w>250</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>ua.homework1.www::Square
+--
+-a: double
+--
++Square(): ctor
++Square(double a, Colors color): ctor
++Square(double a): ctor
++toString(): String
++update(): void
++clone(): Square
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1050</x>
+      <y>80</y>
+      <w>190</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+ua.homework1.www::IFigure
+--
+--
++getSquare(): double
++getPerimeter(): double
++setColor(Colors color): void
++getColor(): Colors
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>960</x>
+      <y>160</y>
+      <w>110</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>340</y>
+      <w>240</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>220.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>770</x>
+      <y>420</y>
+      <w>30</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>960</x>
+      <y>330</y>
+      <w>380</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;360.0;120.0</additional_attributes>
+  </element>
+</diagram>

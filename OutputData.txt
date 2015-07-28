@@ -1,30 +1,15 @@
 
 
-2015-28-14 11:28:29
+2015-15-28 01:15:29
 -----------------------------------------------------------------------------------------------
 
 {CIRCLE1={color=RED, perimeter=182.212373908208, square= 2642.079421669016, radius=29.0, diameter=58.0},
-TRIANGLE2={color=BLACK, perimeter=N/A, square= N/A, a=0.0, b=0.0, c=29.0},
+TRIANGLE2={color=BLACK, perimeter=53.166666666666664, square= 1470.080402185162, a=14.5, b=9.666666666666666, c=29.0},
 CIRCLE3={color=RED, perimeter=383.27430373795477, square= 11689.86626400762, radius=61.0, diameter=122.0},
-TRIANGLE4={color=BLACK, perimeter=N/A, square= N/A, a=0.0, b=0.0, c=32.0},
+TRIANGLE4={color=BLACK, perimeter=58.666666666666664, square= 1789.9671008770586, a=16.0, b=10.666666666666666, c=32.0},
 SQUARE5={color=WHITE, perimeter=14.4, square= 12.96, a=3.6},
 SQUARE6={color=WHITE, perimeter=24.0, square= 36.0, a=6.0},
-TRIANGLE7={color=BLACK, perimeter=N/A, square= N/A, a=0.0, b=0.0, c=28.0},
-TRIANGLE8={color=BLACK, perimeter=N/A, square= N/A, a=0.0, b=0.0, c=37.0}}
-TRIANGLE9={color=BLACK, perimeter=N/A, square= N/A, a=0.0, b=0.0, c=44.0}}
-
-
-
-2015-28-14 11:28:37
------------------------------------------------------------------------------------------------
-
-{CIRCLE1={color=RED, perimeter=182.212373908208, square= 2642.079421669016, radius=29.0, diameter=58.0},
-TRIANGLE2={color=BLACK, perimeter=N/A, square= N/A, a=0.0, b=0.0, c=29.0},
-CIRCLE3={color=RED, perimeter=383.27430373795477, square= 11689.86626400762, radius=61.0, diameter=122.0},
-TRIANGLE4={color=BLACK, perimeter=N/A, square= N/A, a=0.0, b=0.0, c=32.0},
-SQUARE5={color=WHITE, perimeter=14.4, square= 12.96, a=3.6},
-SQUARE6={color=WHITE, perimeter=24.0, square= 36.0, a=6.0},
-TRIANGLE7={color=BLACK, perimeter=N/A, square= N/A, a=0.0, b=0.0, c=28.0},
-TRIANGLE8={color=BLACK, perimeter=N/A, square= N/A, a=0.0, b=0.0, c=37.0}}
-TRIANGLE9={color=BLACK, perimeter=N/A, square= N/A, a=0.0, b=0.0, c=44.0}}
+TRIANGLE7={color=BLACK, perimeter=51.333333333333336, square= 1370.4435616089982, a=14.0, b=9.333333333333334, c=28.0},
+TRIANGLE8={color=BLACK, perimeter=67.83333333333334, square= 2393.0321885748967, a=18.5, b=12.333333333333334, c=37.0},
+TRIANGLE9={color=BLACK, perimeter=80.66666666666666, square= 3384.156550095688, a=22.0, b=14.666666666666666, c=44.0}}
 

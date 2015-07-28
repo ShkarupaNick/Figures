@@ -46,4 +46,24 @@ public class Square extends AbstractFigure{
 		return  (Square)Square.super.clone();
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if (o == null || getClass() != o.getClass()) return false;
+		if (this == o) return true;
+		if (!super.equals(o)) return false;
+
+		Square square = (Square) o;
+
+		return Double.compare(square.a, a) == 0;
+
+	}
+
+	@Override
+	public int hashCode() {
+		int result = super.hashCode();
+		long temp;
+		temp = Double.doubleToLongBits(a);
+		result = 31 * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
 }

@@ -91,6 +91,17 @@ public class InputDataLoader {
             return a;
         }
 
+        @Override
+        public String toString() {
+            return "InputConfig{" +
+                    "a=" + a +
+                    ", b=" + b +
+                    ", c=" + c +
+                    ", radius=" + radius +
+                    ", color=" + color +
+                    ", figure=" + figure +
+                    '}';
+        }
     }
 }
 

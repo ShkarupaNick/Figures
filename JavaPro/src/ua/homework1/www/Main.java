@@ -13,7 +13,7 @@ public class Main {
         InputDataLoader input = new InputDataLoader("InputData.txt");
         List<InputConfig> inputConfigs =  input.getConfigList();
 
-        FiguresFabric fabric = new FiguresFabric();
+        FiguresFactory fabric = new FiguresFactory();
         for(InputConfig conf: inputConfigs){
            list.add(fabric.getInstance(conf));
         }

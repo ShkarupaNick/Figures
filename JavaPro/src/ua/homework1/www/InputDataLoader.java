@@ -1,11 +1,10 @@
 package ua.homework1.www;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 
 /**
  * Created by nshkarupa on 28.07.2015.
@@ -34,75 +33,90 @@ public class InputDataLoader {
         br.close();
 
         for (int i = 0; i < str.length; i++) {
-            InputConfig config = InputLogicController.getInputConfigFor(str[i], i == 0 ? null : str[i - 1], i == str.length-1 ? null : str[i + 1]);
-           if(config!=null)
-            {
+            InputConfig config = InputLogicController.getInputConfigFor(str[i], i == 0 ? null : str[i - 1], i == str.length - 1 ? null : str[i + 1]);
+            if (config != null) {
                 configList.add(config);
             }
         }
     }
 
-    public List<InputConfig> getConfigList() {
-        return configList;
+    public Object loadDeserialize(String path) throws IOException, ClassNotFoundException {
+
+        InputStream file = new FileInputStream(path);
+        InputStream buffer = new BufferedInputStream(file);
+        ObjectInput input = new ObjectInputStream(buffer);
+
+        //deserialize the List
+        Object o = input.readObject();
+        return o;
     }
 
-    static class InputConfig {
 
-        private double a;
-        private double b;
-        private double c;
-        private double radius;
-        private EColors color;
-        private EFigures figure;
-        public InputConfig(double a, double b, double c, double radius, EColors color, EFigures figure) {
-            this.a = a;
-            this.b = b;
-            this.c = c;
-            this.radius = radius;
-            this.color = color;
-            this.figure = figure;
+
+
+
+        public List<InputConfig> getConfigList () {
+            return configList;
         }
 
-        public double getB() {
-            return b;
-        }
+        static class InputConfig {
 
-        public double getC() {
-            return c;
-        }
+            private double a;
+            private double b;
+            private double c;
+            private double radius;
+            private EColors color;
+            private EFigures figure;
 
-        public EColors getColor() {
-            return color;
-        }
+            public InputConfig(double a, double b, double c, double radius, EColors color, EFigures figure) {
+                this.a = a;
+                this.b = b;
+                this.c = c;
+                this.radius = radius;
+                this.color = color;
+                this.figure = figure;
+            }
 
-        public EFigures getFigure() {
-            return figure;
-        }
+            public double getB() {
+                return b;
+            }
 
-        public double getRadius() {
-            return radius;
-        }
+            public double getC() {
+                return c;
+            }
 
-        public void setRadius(double radius) {
-            this.radius = radius;
-        }
+            public EColors getColor() {
+                return color;
+            }
 
-        public double getA() {
-            return a;
-        }
+            public EFigures getFigure() {
+                return figure;
+            }
 
-        @Override
-        public String toString() {
-            return "InputConfig{" +
-                    "a=" + a +
-                    ", b=" + b +
-                    ", c=" + c +
-                    ", radius=" + radius +
-                    ", color=" + color +
-                    ", figure=" + figure +
-                    '}';
+            public double getRadius() {
+                return radius;
+            }
+
+            public void setRadius(double radius) {
+                this.radius = radius;
+            }
+
+            public double getA() {
+                return a;
+            }
+
+            @Override
+            public String toString() {
+                return "InputConfig={" +
+                        "a=" + a +
+                        ", b=" + b +
+                        ", c=" + c +
+                        ", radius=" + radius +
+                        ", color=" + color +
+                        ", figure=" + figure +
+                        '}';
+            }
         }
     }
-}
 
 

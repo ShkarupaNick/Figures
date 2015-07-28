@@ -10,7 +10,7 @@ public class Circle extends AbstractFigure {
         }
 
     public Circle(EColors c) {
-        super(EFigures.CIRCLE,c);
+        super(EFigures.CIRCLE, c);
     }
 
     public Circle(double radius, EColors color) {
@@ -68,8 +68,10 @@ public class Circle extends AbstractFigure {
         if (!super.equals(o)) return false;
 
         Circle circle = (Circle) o;
+
         if (Double.compare(circle.radius, radius) != 0) return false;
         return Double.compare(circle.diameter, diameter) == 0;
+
     }
 
     @Override

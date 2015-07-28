@@ -5,7 +5,7 @@ import ua.homework1.www.InputDataLoader.InputConfig;
 /**
  * Created by nshkarupa on 28.07.2015.
  */
-public class FiguresFabric {
+public class FiguresFactory {
     public AbstractFigure getInstance(InputConfig inputConfig) {
         switch (inputConfig.getFigure()) {
             case CIRCLE:

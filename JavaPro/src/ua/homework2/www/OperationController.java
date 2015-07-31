@@ -19,14 +19,18 @@ public class OperationController {
         createItems();
     }
 
-   /* public void makeOperation(Cart<AbstractItem> cart) {
-        switch (otype) {
-            case ADD:  cart.
-                break;
-            case REM:
-                break;
+    public void makeOperation(Cart<AbstractItem> cart) {
+        if (items.size() > 0) {
+            switch (otype) {
+                case ADD:
+                    cart.addItems(items);
+                    break;
+                case REM:
+                    System.out.println("DELETE OPERATION!!!");
+                    break;
+            }
         }
-    }*/
+    }
 
     private void createItems() {
         ItemFactory f = new ItemFactory();

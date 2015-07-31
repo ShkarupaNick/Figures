@@ -47,4 +47,9 @@ public class Cart<T> {
         cart.add(t);
         return this;
     }
+
+    public Cart<T> addItems(List<T> list){
+        cart.addAll(list);
+        return this;
+    }
 }

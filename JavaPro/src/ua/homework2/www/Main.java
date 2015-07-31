@@ -40,7 +40,7 @@ public class Main {
         OperationController controller = new OperationController(p.getReqItems(), p.getOperation());
 
         Cart<AbstractItem> cart = Cart.getInstatce();
-        cart.setCart(controller.items);
+        controller.makeOperation(cart);
         System.out.println(cart);
         System.out.println(cart.getCount());
     }

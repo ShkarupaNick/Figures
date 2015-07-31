@@ -1,0 +1,21 @@
+{
+  "operation": "ADD",
+  "items": [
+    {
+      "name":"CAPASITOR",
+      "number":"ELCOMP00001",
+      "color":"RED",
+      "count":4
+    },
+    { "name":"TRANSISTOR",
+      "number":"ELCOMP00001",
+      "color":"BLACK",
+      "count":5
+    },
+    { "name":"CAPASITOR",
+      "number":"ELCOMP00001",
+      "color":"RED",
+      "count":3
+    }
+  ]
+}

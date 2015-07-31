@@ -38,12 +38,10 @@ public class Main {
         System.out.println(p.getReqItems());
 
         OperationController controller = new OperationController(p.getReqItems(), p.getOperation());
+
         Cart<AbstractItem> cart = Cart.getInstatce();
         cart.setCart(controller.items);
-
         System.out.println(cart);
-
-
         System.out.println(cart.getCount());
     }
 }

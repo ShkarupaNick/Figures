@@ -19,14 +19,14 @@ public class OperationController {
         createItems();
     }
 
-  /*  public void makeOperation(Cart<AbstractItem> cart){
-
-            switch(otype){
-                case ADD:
-                    break;
-                case REM:
-                    break;
-        }*/
+   /* public void makeOperation(Cart<AbstractItem> cart) {
+        switch (otype) {
+            case ADD:  cart.
+                break;
+            case REM:
+                break;
+        }
+    }*/
 
     private void createItems() {
         ItemFactory f = new ItemFactory();
